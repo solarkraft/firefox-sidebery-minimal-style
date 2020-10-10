@@ -72,7 +72,7 @@ spacer {filter: invert(100%)}
 }
 
 :root[tabsintitlebar] {
-	background-color: var(--bg) !important;
+  background-color: var(--bg) !important;
   color: var(--text) !important
 }
 
@@ -100,7 +100,7 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
 @media (prefers-color-scheme: light) {
   .tabbrowser-tab[selected] .tab-line {background-color: #FF1B00 !important}
   
-	.tab-background[multiselected] {background-color: #4B7CFC !important}
+  .tab-background[multiselected] {background-color: #4B7CFC !important}
   .tabbrowser-tab[multiselected] :hover .tab-background:not([selected]) {background-color: #3E6AE5 !important}
   
   .tab-background[selected]:not([multiselected]) {background: var(--hover) !important}
@@ -120,8 +120,7 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
   box-shadow: none !important;
   background-color: var(--active) !important}
 
-.panel-viewstack{
- max-height: 100% !important}
+.panel-viewstack{max-height: 100% !important}
 
 
 .tabbrowser-tab::after {border-left: 0 !important}
@@ -130,7 +129,7 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
 /*   Container indicator   */
 .tab-bottom-line {
   background: var(--identity-tab-color) !important;
-	margin-bottom: 0 !important}
+  margin-bottom: 0 !important}
 @media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {.tab-bottom-line {height: 1px !important}}
 
 /*   Discard tabs   */
@@ -146,7 +145,7 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
   [sizemode="maximized"][titlepreface*="[Sidebery]"] #navigator-toolbox {margin: 8px 0 0}
   [sizemode="normal"]:root {
     --tab-min-height: 31px !important;
-  	--tabs-navbar-shadow-size: 0 !important}
+    --tabs-navbar-shadow-size: 0 !important}
 }
 [titlepreface*="[Sidebery]"] #titlebar,
 [titlepreface*="[Sidebery]"] #tabbrowser-tabs,
@@ -173,7 +172,7 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
 
 #sidebar {
   width: calc(28px * 10) !important;
-	max-width: 50vw !important;
+  max-width: 50vw !important;
   height: 100%}
 
 [titlepreface*="[Sidebery]"] #appcontent {margin-left: 22px}
@@ -223,7 +222,7 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
   {display:none}
 
 .bookmark-item .toolbarbutton-text {color: var(--text)}
-.bookmark-item:hover .toolbarbutton-text {color: var(--text-hover)}  
+.bookmark-item:hover .toolbarbutton-text {color: var(--text-hover)}
 .bookmark-item menuseparator {height: 8px}
 
 #PlacesToolbarItems > toolbarbutton > label,
@@ -257,7 +256,7 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
     padding-inline: 0 !important}
 
   #urlbar .search-one-offs:not([hidden]) {
-	  padding-block: 4px !important}
+    padding-block: 4px !important}
 
   #tracking-protection-icon-container {padding: 0 2px !important}
   #identity-box {margin: 0 2px 0 0 !important; padding: 0 2px !important}
@@ -342,12 +341,12 @@ menupopup, menuseparator, menuitem, menucaption, menupopup menu, tooltip, panelv
 menuitem > label {margin-bottom: 2px !important}
 menupopup {padding: 0 !important}
 menupopup > menu > menupopup {
-	margin-inline-start: 0 !important;
-	margin-top: 0 !important}
+  margin-inline-start: 0 !important;
+  margin-top: 0 !important}
 
   /*   menu border   */
 @media (prefers-color-scheme: light) {
-	menupopup, tooltip, panelview, .panel-footer {border: 1px solid var(--hover) !important}
+  menupopup, tooltip, panelview, .panel-footer {border: 1px solid var(--hover) !important}
 }
 
 menuitem:hover,
@@ -355,16 +354,16 @@ menupopup menu:hover > label,
 toolbarbutton:hover,
 .urlbarView-row:hover,
 .bookmark-item[open="true"] > label
-	{color: var(--text-hover) !important}
+  {color: var(--text-hover) !important}
 menuitem:hover,
 menupopup menu:hover,
 toolbarbutton:hover:not(.titlebar-close),
 toolbarbutton.bookmark-item[open="true"]
-	{background-color: var(--hover) !important}
+  {background-color: var(--hover) !important}
 menuitem:active,
 menupopup menu:active,
 toolbarbutton:active
-	{background-color: var(--active) !important}
+  {background-color: var(--active) !important}
 
 
 #context-navigation,
@@ -409,7 +408,7 @@ menupopup:-moz-any(menu,menuitem,menucaption):not([disabled="true"]):not([hidden
   background-color: var(--menu)!important;
   padding: 0 4px !important}
 .findbar-find-previous:not(:hover), .findbar-find-next:not(:hover) {
-	background: var(--menu) !important}
+  background: var(--menu) !important}
 
 
 /*   ______ About Firefox ______   */
@@ -419,28 +418,29 @@ menupopup:-moz-any(menu,menuitem,menucaption):not([disabled="true"]):not([hidden
 
 /*   ______ ADDONS ______   */
 
-/*		Checker Plus for Gmail		*/ 
+/*   Checker Plus for Gmail   */ 
 #checkerplusforgmail_jasonsavard_com-browser-action .toolbarbutton-badge {
   color: #E74B3B !important}
 
-/*		Toggle Proxy WebExt		*/
+/*   Toggle Proxy WebExt   */
 #toggle-proxy-webext_defkev-browser-action[label="No Proxy"] image.toolbarbutton-icon {filter: invert(65%)}
 #toggle-proxy-webext_defkev-browser-action image.toolbarbutton-icon {filter: brightness(0.5) sepia(1) saturate(10000%) hue-rotate(200deg)}
 
-/*		Context Search Origin		*/
+/*   Context Search Origin   */
 #_e040cf12-0537-4265-8ce0-ee195356ed60_-menuitem-_ri9VWUaW_hZ0 {-moz-box-ordinal-group: 0}
 #_ddc62400-f22d-4dd3-8b4a-05837de53c2e_-menuitem-_read-selection {-moz-box-ordinal-group: 2}
 
 @media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {
-  
-	#_e040cf12-0537-4265-8ce0-ee195356ed60_-menuitem-_ri9VWUaW_hZ0 > hbox:nth-child(1) > image:nth-child(1),
-	#_e040cf12-0537-4265-8ce0-ee195356ed60_-menuitem-_f_M3cYVO8DkN > hbox:nth-child(1) > image:nth-child(1)
-  	{filter: invert(100%)}
 
-  /*		Toggle Proxy WebExt		*/
-	#toggle-proxy-webext_defkev-browser-action[label="No Proxy"] image.toolbarbutton-icon {filter: invert(30%)}
+  #_e040cf12-0537-4265-8ce0-ee195356ed60_-menuitem-_ri9VWUaW_hZ0 > hbox:nth-child(1) > image:nth-child(1),
+  #_e040cf12-0537-4265-8ce0-ee195356ed60_-menuitem-_f_M3cYVO8DkN > hbox:nth-child(1) > image:nth-child(1)
+    {filter: invert(100%)}
 
-	/*		Translate Web Pages - Filipe Ps		*/ 
-	#pageAction-urlbar-_036a55b4-5e72-4d05-a06c-cba2dfcc134a_ {filter: contrast(0%)}
+  /*   Toggle Proxy WebExt   */
+  #toggle-proxy-webext_defkev-browser-action[label="No Proxy"] image.toolbarbutton-icon {filter: invert(30%)}
 
+  /*   Translate Web Pages - Filipe Ps   */ 
+  #pageAction-urlbar-_036a55b4-5e72-4d05-a06c-cba2dfcc134a_ {filter: contrast(0%)}
 }
+
+ 

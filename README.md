@@ -10,4 +10,6 @@ Universal minimal style for Firefox and Sidebery
 7. Restart Firefox
 # Install Sidebery Style
 1. Install https://addons.mozilla.org/firefox/addon/sidebery/
-2. Change into the Settings panel
+2. Copy the code from SideberySidebar.css to Sidebery / Settings / Styles editor / Sidebar
+3. Copy the code from SideberyGroupPage.css to Sidebery / Settings / Styles editor / Group page
+4. Enable the option: Sidebery / Settings / Help / Add preface to the browser window's title if sidebery is active

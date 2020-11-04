@@ -57,7 +57,7 @@ spacer {filter: invert(100%)}
   --tabs-border-color: transparent;
   --tab-min-width: 84px;
 
-  --toolbar-bgcolor: transparent !important;
+  --toolbar-bgcolor: var(--bg) !important;
   --toolbar-bgimage: none;
   --toolbar-color: var(--text) !important;
   --toolbarbutton-outer-padding: 0;
@@ -120,7 +120,7 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
   box-shadow: none !important;
   background-color: var(--active) !important}
 
-.panel-viewstack{max-height: 100% !important}
+.panel-viewstack {max-height: 100% !important}
 
 
 .tabbrowser-tab::after {border-left: 0 !important}

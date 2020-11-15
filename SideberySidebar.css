@@ -184,10 +184,12 @@ text-shadow:
 }
 
 
-.Tab .placeholder > svg{
+.Tab .placeholder > svg,
+.PinnedTab .placeholder > svg{
 	fill: var(--tabs-fg)
 }
-.Tab[data-active] .placeholder > svg{
+.Tab[data-active] .placeholder > svg,
+.PinnedTab[data-active] .placeholder > svg{
 	fill: var(--tabs-activated-fg)
 }
 

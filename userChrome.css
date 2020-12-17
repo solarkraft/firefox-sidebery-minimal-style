@@ -185,15 +185,12 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
 
 /*   Show window buttons - + x   
 @media(-moz-windows-default-theme){[sizemode="maximized"][titlepreface*="[Sidebery]"] #navigator-toolbox {margin: inherit}}
-
 [sizemode="maximized"][titlepreface*="[Sidebery]"] #titlebar,
 [sizemode="normal"][titlepreface*="[Sidebery]"] #titlebar {display: inherit !important; margin-bottom: -29px}
 [inFullscreen][titlepreface*="[Sidebery]"] #titlebar {display: inherit !important; margin-bottom: -24px}
-
 [sizemode="maximized"][titlepreface*="[Sidebery]"] #nav-bar,
 [sizemode="normal"][titlepreface*="[Sidebery]"] #nav-bar {margin-right: 138px}
 [inFullscreen][titlepreface*="[Sidebery]"] #nav-bar {margin-right: 108px}
-
 [inFullscreen][titlepreface*="[Sidebery]"] #TabsToolbar-customization-target {display:none}
 */
 
@@ -235,9 +232,8 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
 #identity-popup{--popup-width: auto !important}
 
 #urlbar-container {--urlbar-container-height: 28px !important}
-#urlbar {
-  top: 1px !important;
-  color: var(--lwt-toolbarbutton-icon-fill) !important}
+[uidensity="compact"] #urlbar {top: 1px !important}
+#urlbar {color: var(--lwt-toolbarbutton-icon-fill) !important}
 
 #urlbar-background {background-color: var(--bg) !important}
 #urlbar:not([open]) #urlbar-background {box-shadow: none !important}

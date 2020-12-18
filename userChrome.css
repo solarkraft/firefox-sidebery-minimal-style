@@ -6,7 +6,7 @@
     --bg: #000;
     --menu: #111;
     --hover: #1a1a1a;
-    --active: #333;
+    --active: #262626;
     --url-color: #8F94D2;
   
     --lwt-toolbarbutton-icon-fill: #aaa !important;
@@ -246,8 +246,9 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
     left: 0 !important;
     width: 100% !important}
 
+  [uidensity="compact"] #urlbar[breakout][breakout-extend] > #urlbar-input-container {
+    height: 26px !important}
   #urlbar[breakout][breakout-extend] > #urlbar-input-container {
-    height: var(--urlbar-height) !important;
     padding-block: 0 !important;
     padding-inline: 0 !important}
 
@@ -347,18 +348,20 @@ menupopup > menu > menupopup {
 
 menuitem:hover,
 menupopup menu:hover > label,
-toolbarbutton:hover,
+toolbarbutton:hover:not([disabled]),
 .urlbarView-row:hover,
-.bookmark-item[open="true"] > label
+.bookmark-item[open] > label
   {color: var(--text-hover) !important}
 menuitem:hover,
 menupopup menu:hover,
-toolbarbutton:hover:not(.titlebar-close),
-toolbarbutton.bookmark-item[open="true"]
+toolbarbutton:hover:not([disabled], .titlebar-close, #nav-bar #back-button),
+toolbarbutton.bookmark-item[open],
+.menu-iconic:hover,
+.menu-iconic[open]
   {background-color: var(--hover) !important}
 menuitem:active,
 menupopup menu:active,
-toolbarbutton:active
+toolbarbutton:active:not([disabled], .titlebar-close, #nav-bar #back-button)
   {background-color: var(--active) !important}
 
 
@@ -407,6 +410,16 @@ menupopup:-moz-any(menu,menuitem,menucaption):not([disabled="true"]):not([hidden
   background: var(--menu) !important}
 
 
+/*   ______ Library ______   */
+#placesToolbar {
+  padding: 0 4px 0 0 !important}
+#placesToolbar > toolbarbutton {
+  padding: 7px !important}
+#placesMenu > menu {
+  padding: 5px !important}
+:root {--organizer-text-secondary-color: transparent !important}
+
+
 /*   ______ About Firefox ______   */
 #aboutDialogContainer {background: linear-gradient(to top, #0D0A17, #20123A) !important}
 #bottomBox {display:none}
@@ -415,28 +428,22 @@ menupopup:-moz-any(menu,menuitem,menucaption):not([disabled="true"]):not([hidden
 /*   ______ ADDONS ______   */
 
 /*   Checker Plus for Gmail   */ 
-#checkerplusforgmail_jasonsavard_com-browser-action .toolbarbutton-badge {
-  color: #E74B3B !important}
-
-/*   Toggle Proxy WebExt   */
-#toggle-proxy-webext_defkev-browser-action[label="No Proxy"] image.toolbarbutton-icon {filter: invert(65%)}
-#toggle-proxy-webext_defkev-browser-action image.toolbarbutton-icon {filter: brightness(0.5) sepia(1) saturate(10000%) hue-rotate(200deg)}
+#checkerplusforgmail_jasonsavard_com-browser-action .toolbarbutton-badge {color: #E74B3B !important}
 
 /*   Context Search Origin   */
 #_e040cf12-0537-4265-8ce0-ee195356ed60_-menuitem-_ri9VWUaW_hZ0 {-moz-box-ordinal-group: 0}
 #_ddc62400-f22d-4dd3-8b4a-05837de53c2e_-menuitem-_read-selection {-moz-box-ordinal-group: 2}
-
 @media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {
-
   #_e040cf12-0537-4265-8ce0-ee195356ed60_-menuitem-_ri9VWUaW_hZ0 > hbox:nth-child(1) > image:nth-child(1),
   #_e040cf12-0537-4265-8ce0-ee195356ed60_-menuitem-_f_M3cYVO8DkN > hbox:nth-child(1) > image:nth-child(1)
-    {filter: invert(100%)}
+    {filter: invert(100%)}}
 
-  /*   Toggle Proxy WebExt   */
-  #toggle-proxy-webext_defkev-browser-action[label="No Proxy"] image.toolbarbutton-icon {filter: invert(30%)}
+/*   Translate Web Pages - Filipe Ps   */ 
+@media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {#pageAction-urlbar-_036a55b4-5e72-4d05-a06c-cba2dfcc134a_ {filter: contrast(0%)}}
 
-  /*   Translate Web Pages - Filipe Ps   */ 
-  #pageAction-urlbar-_036a55b4-5e72-4d05-a06c-cba2dfcc134a_ {filter: contrast(0%)}
-}
+/*   Toggle Proxy WebExt   */
+#toggle-proxy-webext_defkev-browser-action[label="No Proxy"] image.toolbarbutton-icon {filter: invert(65%)}
+#toggle-proxy-webext_defkev-browser-action image.toolbarbutton-icon {filter: brightness(0.5) sepia(1) saturate(10000%) hue-rotate(200deg)}
+@media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {#toggle-proxy-webext_defkev-browser-action[label="No Proxy"] image.toolbarbutton-icon {filter: invert(30%)}
 
  

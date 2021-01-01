@@ -21,7 +21,6 @@
 #urlbar-input::-moz-selection {
   background-color: var(--text)!important;
   color: var(--bg)}
-
 }
 
 /*   ______ Light ______   */ 
@@ -39,7 +38,6 @@
   }
   
 spacer {filter: invert(100%)}
-
 }
 
 /*   ______ All ______   */ 
@@ -47,7 +45,7 @@ spacer {filter: invert(100%)}
   scrollbar-width: thin;
   scrollbar-color: #80808060 transparent;
 
-  font-size: 10pt;
+  font-size: 11pt;
 
   border: none !important;
   --toolbarbutton-border-radius: 0;
@@ -69,8 +67,14 @@ spacer {filter: invert(100%)}
   --autocomplete-popup-highlight-color: var(--url-color) !important;
   --urlbar-popup-action-color: var(--url-color) !important;
   --urlbar-popup-url-color: var(--url-color) !important;
+   /*  searchbar */
+  --autocomplete-popup-background: var(--bg);
+  --autocomplete-popup-color: var(--text);
 }
 
+:root[uidensity="compact"] * {
+  font-size: 10pt}
+ 
 :root[tabsintitlebar] {
   background-color: var(--bg) !important;
   color: var(--text) !important
@@ -143,10 +147,13 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
 /*   Hide Tab bar if Sidebery is Active   */
 @media(-moz-windows-default-theme) {
   [sizemode="maximized"][titlepreface*="[Sidebery]"] #navigator-toolbox {margin: 8px 0 0}
-  [sizemode="normal"]:root {
+  [uidensity="compact"][sizemode="normal"]:root {
     --tab-min-height: 31px !important;
     --tabs-navbar-shadow-size: 0 !important}
+  [uidensity="normal"][sizemode="normal"]:root {
+    --tab-min-height: 32px !important}
 }
+
 [titlepreface*="[Sidebery]"] #titlebar,
 [titlepreface*="[Sidebery]"] #tabbrowser-tabs,
 [titlepreface*="[Sidebery]"] #tabContextMenu,
@@ -212,6 +219,27 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
 
 /*   ______ NAVBAR ______   */
 
+:root:not([uidensity="compact"]) #back-button {
+	padding-block: 0 !important;
+	padding-inline: 0 !important;
+	border-radius: 0 !important;
+}
+:root:not([uidensity="compact"]) #back-button > .toolbarbutton-icon {
+	background-color: var(--bg) !important;
+	border-radius: 0 !important;
+	width: 32px !important;
+	height: 32px !important;
+	padding: 8px !important;
+}
+:root:not([uidensity="compact"]) #back-button:hover > .toolbarbutton-icon {
+  background-color: var(--hover) !important}
+
+:root:not([uidensity="compact"]) #back-button:active > .toolbarbutton-icon {
+  background-color: var(--active) !important}
+
+:root:not([uidensity="compact"]) {--toolbarbutton-inner-padding: 8px !important}
+
+
 /*   Bookmarks   */
 .bookmark-item .toolbarbutton-icon,
 .openintabs-menuitem,
@@ -222,21 +250,26 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
 .bookmark-item:hover .toolbarbutton-text {color: var(--text-hover)}
 .bookmark-item menuseparator {height: 8px}
 
-#PlacesToolbarItems > toolbarbutton > label,
 
-/*   Urlbar   */
+/*   Urlbar, Searchbar */
+#PlacesToolbarItems > toolbarbutton > label,
 #identity-box,
 #urlbar-input {
   margin-bottom: 1px !important;
   color: var(--text) !important}
+.searchbar-textbox{
+  margin-bottom: 3px !important;
+  color: var(--text) !important}
 #identity-popup{--popup-width: auto !important}
 
-#urlbar-container {--urlbar-container-height: 28px !important}
-[uidensity="compact"] #urlbar {top: 1px !important}
+[uidensity="compact"] #urlbar-container {--urlbar-container-height: 26px !important}
+:root:not([uidensity="compact"]) #urlbar-container {--urlbar-container-height: 30px !important}
+#search-container {margin: -2px 0 !important}
+#urlbar {top: 1px !important}
 #urlbar {color: var(--lwt-toolbarbutton-icon-fill) !important}
 
-#urlbar-background {background-color: var(--bg) !important}
-#urlbar:not([open]) #urlbar-background {box-shadow: none !important}
+#urlbar-background, #navigator-toolbox #searchbar {background-color: var(--bg) !important}
+#urlbar:not([open]) #urlbar-background, #searchbar {box-shadow: none !important}
 
 .urlbarView-row {color: var(--text)}
 .urlbarView-row[selected] .urlbarView-title {color: var(--text-hover)}
@@ -246,11 +279,13 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
     left: 0 !important;
     width: 100% !important}
 
-  [uidensity="compact"] #urlbar[breakout][breakout-extend] > #urlbar-input-container {
-    height: 26px !important}
   #urlbar[breakout][breakout-extend] > #urlbar-input-container {
+    height: 30px !important;
     padding-block: 0 !important;
     padding-inline: 0 !important}
+  [uidensity="compact"] #urlbar[breakout][breakout-extend] > #urlbar-input-container {
+    height: 26px !important}
+
 
   #urlbar .search-one-offs:not([hidden]) {
     padding-block: 4px !important}
@@ -262,8 +297,11 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
 
 #pageActionButton,
 #editBookmarkPanelImage,
-#urlbar-anon-search-settings-compact
+.search-one-offs > hbox:nth-child(1),
+#urlbar-anon-search-settings-compact,
+#searchbar-anon-search-settings
   {display:none !important}
+
 
 /*   ______ Notifications ______   */
 .toolbarbutton-badge {
@@ -284,6 +322,9 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
   -2px 1px 3px var(--hover),
   -2px 1px 4px var(--hover),
   -2px 2px 4px var(--hover) !important}
+
+
+#PanelUI-button, #PanelUI-menu-button {padding-inline: 0 !important; margin-inline: 0 !important}
 
 
 /*   ______ MENU ______   */
@@ -391,6 +432,7 @@ menupopup.textbox-contextmenu:nth-child(3) > menuseparator:nth-child(8),
 menupopup:-moz-any(menu,menuitem,menucaption):not([disabled="true"]):not([hidden="true"]) ~ menuseparator:first-of-type:not([hidden="true"])
   {display:-moz-box}
 
+
 #statuspanel-label {
   background-color: var(--bg) !important;
   color: var(--text) !important;
@@ -417,7 +459,10 @@ menupopup:-moz-any(menu,menuitem,menucaption):not([disabled="true"]):not([hidden
   padding: 7px !important}
 #placesMenu > menu {
   padding: 5px !important}
+#placesMenu > menu > .menubar-text {
+  color: var(--text)}
 :root {--organizer-text-secondary-color: transparent !important}
+#searchFilter {background-color: var(--hover) !important}
 
 
 /*   ______ About Firefox ______   */

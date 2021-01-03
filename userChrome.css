@@ -220,16 +220,16 @@ hbox.titlebar-spacer:nth-child(1) {display:none !important}
 /*   ______ NAVBAR ______   */
 
 :root:not([uidensity="compact"]) #back-button {
-	padding-block: 0 !important;
-	padding-inline: 0 !important;
-	border-radius: 0 !important;
+  padding-block: 0 !important;
+  padding-inline: 0 !important;
+  border-radius: 0 !important;
 }
 :root:not([uidensity="compact"]) #back-button > .toolbarbutton-icon {
-	background-color: var(--bg) !important;
-	border-radius: 0 !important;
-	width: 32px !important;
-	height: 32px !important;
-	padding: 8px !important;
+  background-color: var(--bg) !important;
+  border-radius: 0 !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 8px !important;
 }
 :root:not([uidensity="compact"]) #back-button:hover > .toolbarbutton-icon {
   background-color: var(--hover) !important}

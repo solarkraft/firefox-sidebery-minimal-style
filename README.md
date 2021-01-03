@@ -19,6 +19,10 @@ Universal minimal style for Firefox and Sidebery
 3. Copy the code from SideberyGroupPage.css to Sidebery / Settings / Styles editor / Group page
 4. Enable the option: Sidebery / Settings / Help / Add preface to the browser window's title if sidebery is active
 
+# Settings css
+ - If you need window control buttons - unlock code `Show window buttons - + x`
+ - If you need an interface in window mode - block the code `Hide interface in window mode`
+
 # Recommended settings about:config
 - Opening a bookmark in a new tab
 `browser.tabs.loadBookmarksInTabs` `true`
